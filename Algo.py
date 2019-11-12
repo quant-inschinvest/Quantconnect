@@ -1,3 +1,5 @@
+## Richard M Quant
+
 import tensorflow as tf
 
 import numpy as np
@@ -22,10 +24,6 @@ from datetime import datetime, timedelta
 
 import pandas as pd
 from copy import deepcopy
-
-## Kaustubh Jagtap
-## Sung Zheng Jie
-## Nicklaus Ong
 
 seed = 123
 random.seed(seed)
@@ -277,6 +275,7 @@ class BasicTemplateAlgorithm(QCAlgorithm):
                     this_df = pd.DataFrame({"depth": [depth], "n_est":[n_est], "criterion": [crn], "acc_score": [average_acc]})
                     params_df = params_df.append(this_df)
         
+
         opt_values = params_df[params_df['acc_score'] == params_df['acc_score'].max()]
         opt_depth, opt_n_est, opt_crn = opt_values["depth"][0], opt_values["n_est"][0], opt_values["criterion"][0]
         
